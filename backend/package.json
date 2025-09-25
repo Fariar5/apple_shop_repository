@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Fariar5/apple_shop_repository#readme",
+  "bugs": {
+    "url": "https://github.com/Fariar5/apple_shop_repository/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fariar5/apple_shop_repository.git"
+  },
+  "license": "ISC",
+  "author": "Simon",
+  "type": "module",
+  "main": "src/server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}
