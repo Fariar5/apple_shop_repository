@@ -96,12 +96,12 @@
       <h2>Browse By Category</h2>      
       <div class="category">
         <div class="categories">
-          <div class="category_card"><img src="images/Phones.png" alt=""><span>Phones</span></div>
-          <div class="category_card"><img src="images/Smart Watches.png" alt=""><span>Smart Watches</span></div>
-          <div class="category_card"><img src="images/Cameras.png" alt=""><span>Cameras</span></div>
-          <div class="category_card"><img src="images/Headphones.png" alt=""><span>Headphones</span></div>
-          <div class="category_card"><img src="images/Computers.png" alt=""><span>Computers</span></div>
-          <div class="category_card"><img src="images/Gaming.png" alt=""><span>Gaming</span></div>
+          <div class="category_card"><a href="/phone_category"><img src="images/Phones.png" alt=""><span>Phones</span></a></div>
+          <div class="category_card"><a href=""></a><img src="images/Smart Watches.png" alt=""><span>Smart Watches</span></a></div>
+          <div class="category_card"><a href=""></a><img src="images/Cameras.png" alt=""><span>Cameras</span></a></div>
+          <div class="category_card"><a href=""></a><img src="images/Headphones.png" alt=""><span>Headphones</span></a></div>
+          <div class="category_card"><a href=""></a><img src="images/Computers.png" alt=""><span>Computers</span></a></div>
+          <div class="category_card"><a href=""></a><img src="images/Gaming.png" alt=""><span>Gaming</span></a></div>
         </div>
 
       </div>
@@ -112,62 +112,19 @@
       <h2></h2>      
       <div class="product">
         <div class="products">
+
+
+        <% content.forEach(product=>{ %>
           <div class="product-card1">            
             <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/iphone-compare-iphone-17-pro-202509.png" alt=""></div>
-            <div class="card43"><p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p> </div>
-            <div class="card44"><strong>$1499</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>            
+            <div class="card42"><img src="./Recources/Iphones/<%=product.name%>-<%=product.model%>-<%=product.price%>.png" alt=""></div>
+            <div class="card43"><p><%=product.name%> <%=product.model%></br></br></p> </div>
+            <div class="card44"><strong>$<%= product.price %></strong></div>
+            <div class="card45"><a class="btnp" href="/product/<%= product.id %>">Shop Now</a></div>            
           </div>
-          <div class="product-card2">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1.png" alt=""></div>
-            <div class="card43"><p>Blackmagic Pocket</br>Cinema Camera 6k</br></p> </div>
-            <div class="card44"><strong>$2535</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card3">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (1).png" alt=""></div>
-            <div class="card43"><p>Apple Watch Series 9 GPS </br>41mm Starlight Aluminium </br></p> </div>
-            <div class="card44"><strong>$399</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card4">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/pi10.png" alt=""></div>
-            <div class="card43"><p>AirPods Max Blue </br>Starlight Aluminium  </br></p> </div>
-            <div class="card44"><strong>$549</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card5">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (6).png" alt=""></div>
-            <div class="card43"><p>Samsung Galaxy Watch6 </br>Classic 47mm Black</br></p> </div>
-            <div class="card44"><strong>$369</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card6">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (5).png" alt=""></div>
-            <div class="card43"><p>Galaxy Z Fold5 Unlocked | </br>256GB | Phantom Black</br></p> </div>
-            <div class="card44"><strong>$1799</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card7">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (4).png" alt=""></div>
-            <div class="card43"><p>Galaxy Buds FE </br>Graphite</br></p></div>
-            <div class="card44"><strong>$99.99</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card8">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (3).png" alt=""></div>
-            <div class="card43"><p>Apple iPad 9 10.2" 64GB Wi-Fi</br> Silver (MK2L3) 2021</br></p> </div>
-            <div class="card44"><strong>$398</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
+        <% }) %>
+
+
         </div>
       </div>
     </div>    
