@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/category.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Vazirmatn:wght@100..900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="./Recources/Logo.png" />
+        </div>
+        <div class="search">
+            <div class="search-box">
+                <button><img src="./Recources/Search.png" /></button>
+                <input type="text" placeholder="Search">
+
+            </div>
+        </div>
+
+        <div class="list">
+            <ul class="list-links">
+                <li><a>Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact us</a></li>
+                <li><a>blog</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+            <a>
+                <img class="one" src="./Recources/1.png" />
+            </a>
+            <a>
+                <img class="two" src="./Recources/Cart1.png" />
+            </a>
+            <a>
+                <img class="three" src="./Recources/Vector.png" />
+            </a>
+        </div>
+    </header>
+    <div style="padding: 15px 5%; display: flex; gap: 2rem;">
+        <div style="color: #A4A4A4;">Home</div>
+        <div><img src="./Recources/مخلفات/Arrow.png"></div>
+        <div style="color: #A4A4A4;">Catalog</div>
+        <div><img src="./Recources/مخلفات/Arrow.png"></div>
+        <div>Smartphones</div>
+    </div>
+    <section>
+        <div class="left-section">
+            <!-- START: Filters Accordion (paste inside .left-section) -->
+            <div class="filters-accordion" aria-label="Product filters">
+                <!-- Brand (open by default) -->
+                <div class="filter-group">
+                    <button class="filter-toggle" aria-expanded="true" aria-controls="panel-brand">
+                        <span class="filter-title">Brand</span>
+                        <span class="chev" aria-hidden="true">▴</span>
+                    </button>
+
+                    <div id="panel-brand" class="filter-panel expanded" role="region">
+                        <div class="brand-search">
+                            <label class="visually-hidden" for="brand-search-input">Search brands</label>
+                            <input id="brand-search-input" type="search" placeholder="Search" autocomplete="off">
+                            <button class="clear-search" aria-label="Clear search">✕</button>
+                        </div>
+
+                        <ul class="brand-list" id="brand-list">
+                            <li>
+                                <label class="chk">
+                                    <input type="checkbox" name="brand" value="Apple" checked>
+                                    <span class="name">Apple</span>
+                                    <span class="count">110</span>
+                                </label>
+                            </li>
+                            <li><label class="chk"><input type="checkbox" name="brand" value="Samsung"><span
+                                        class="name">Samsung</span><span class="count">125</span></label></li>
+                            <li><label class="chk"><input type="checkbox" name="brand" value="Xiaomi"><span
+                                        class="name">Xiaomi</span><span class="count">68</span></label></li>
+                            <li><label class="chk"><input type="checkbox" name="brand" value="Poco"><span
+                                        class="name">Poco</span><span class="count">44</span></label></li>
+                            <li><label class="chk"><input type="checkbox" name="brand" value="OPPO"><span
+                                        class="name">OPPO</span><span class="count">36</span></label></li>
+                            <li><label class="chk"><input type="checkbox" name="brand" value="Honor"><span
+                                        class="name">Honor</span><span class="count">10</span></label></li>
+                            <li><label class="chk"><input type="checkbox" name="brand" value="Motorola"><span
+                                        class="name">Motorola</span><span class="count">34</span></label></li>
+                            <li><label class="chk"><input type="checkbox" name="brand" value="Nokia"><span
+                                        class="name">Nokia</span><span class="count">22</span></label></li>
+                            <li><label class="chk"><input type="checkbox" name="brand" value="Realme"><span
+                                        class="name">Realme</span><span class="count">35</span></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Collapsible sections (collapsed by default) -->
+                <div class="filter-group">
+                    <button class="filter-toggle" aria-expanded="false" aria-controls="panel-battery">
+                        <span class="filter-title">Battery capacity</span>
+                        <span class="chev" aria-hidden="true">▾</span>
+                    </button>
+                    <div id="panel-battery" class="filter-panel" role="region">
+                        <ul class="simple-list">
+                            <li><label class="chk"><input type="checkbox"> Up to 3000 mAh <span
+                                        class="count">12</span></label></li>
+                            <li><label class="chk"><input type="checkbox"> 3000–4000 mAh <span
+                                        class="count">48</span></label></li>
+                            <li><label class="chk"><input type="checkbox"> 4000–5000 mAh <span
+                                        class="count">102</span></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle" aria-expanded="false" aria-controls="panel-screen-type">
+                        <span class="filter-title">Screen type</span>
+                        <span class="chev" aria-hidden="true">▾</span>
+                    </button>
+                    <div id="panel-screen-type" class="filter-panel" role="region">
+                        <ul class="simple-list">
+                            <li><label class="chk"><input type="checkbox"> AMOLED <span class="count">88</span></label>
+                            </li>
+                            <li><label class="chk"><input type="checkbox"> LCD <span class="count">40</span></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle" aria-expanded="false" aria-controls="panel-screen-diag">
+                        <span class="filter-title">Screen diagonal</span>
+                        <span class="chev" aria-hidden="true">▾</span>
+                    </button>
+                    <div id="panel-screen-diag" class="filter-panel" role="region">
+                        <ul class="simple-list">
+                            <li><label class="chk"><input type="checkbox"> up to 6.0" <span
+                                        class="count">21</span></label></li>
+                            <li><label class="chk"><input type="checkbox"> 6.1" - 6.8" <span
+                                        class="count">78</span></label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle" aria-expanded="false" aria-controls="panel-protection">
+                        <span class="filter-title">Protection class</span>
+                        <span class="chev" aria-hidden="true">▾</span>
+                    </button>
+                    <div id="panel-protection" class="filter-panel" role="region">
+                        <ul class="simple-list">
+                            <li><label class="chk"><input type="checkbox"> IP67 <span class="count">14</span></label>
+                            </li>
+                            <li><label class="chk"><input type="checkbox"> IP68 <span class="count">53</span></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle" aria-expanded="false" aria-controls="panel-memory">
+                        <span class="filter-title">Built-in memory</span>
+                        <span class="chev" aria-hidden="true">▾</span>
+                    </button>
+                    <div id="panel-memory" class="filter-panel" role="region">
+                        <ul class="simple-list">
+                            <li><label class="chk"><input type="checkbox"> 64 GB <span class="count">18</span></label>
+                            </li>
+                            <li><label class="chk"><input type="checkbox"> 128 GB <span class="count">67</span></label>
+                            </li>
+                            <li><label class="chk"><input type="checkbox"> 256 GB <span class="count">33</span></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Filters Accordion -->
+
+        </div>
+        <div class="right-section">
+            <div style="color: #6C6C6C; margin-bottom: 1rem;">Selected Products:<span style="color: black;">85</span>
+            </div>
+            <div class="grid-cont">
+
+
+                <% content.forEach(product=>{ %>
+                    <div class="in-grid">
+                        <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                                data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                        <div class="card2"><img src="./Recources/Iphones/<%=product.name%>-<%=product.model%>-<%=product.price%>.png" alt=""></div>
+                        <div class="card3">
+                            <p><%=product.name%> <%=product.model%></br></br></p>
+                        </div>
+                        <div class="card4"><strong>$<%=product.price%></strong></div>
+                        <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                    </div>
+                <% }) %>
+                
+                        <!-- <div class="in-grid">
+                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
+                    <div class="card3">
+                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
+                    </div>
+                    <div class="card4"><strong>$1499</strong></div>
+                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                </div>
+                <div class="in-grid">
+                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
+                    <div class="card3">
+                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
+                    </div>
+                    <div class="card4"><strong>$1499</strong></div>
+                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                </div>
+                <div class="in-grid">
+                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
+                    <div class="card3">
+                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
+                    </div>
+                    <div class="card4"><strong>$1499</strong></div>
+                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                </div>
+                <div class="in-grid">
+                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
+                    <div class="card3">
+                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
+                    </div>
+                    <div class="card4"><strong>$1499</strong></div>
+                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                </div>
+                <div class="in-grid">
+                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
+                    <div class="card3">
+                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
+                    </div>
+                    <div class="card4"><strong>$1499</strong></div>
+                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                </div>
+                <div class="in-grid">
+                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
+                    <div class="card3">
+                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
+                    </div>
+                    <div class="card4"><strong>$1499</strong></div>
+                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                </div>
+                <div class="in-grid">
+                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
+                    <div class="card3">
+                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
+                    </div>
+                    <div class="card4"><strong>$1499</strong></div>
+                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                </div>
+                <div class="in-grid">
+                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
+                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
+                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
+                    <div class="card3">
+                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
+                    </div>
+                    <div class="card4"><strong>$1499</strong></div>
+                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                </div> -->
+                        <div class="dahaomi">
+                            <div><img src="./Recources/مخلفات/LeftArrow.svg" alt=""></div>
+                            <div
+                                style="width: 2rem;height: 2rem; padding: 4px; aspect-ratio: 1/1 !important; background-color: black;color: white;display: flex;align-items: center;justify-content: center; border-radius: 5px; font-size: 0.6rem; cursor: pointer;">
+                                1</div>
+                            <div
+                                style="width: 2rem;height: 2rem; padding: 4px; aspect-ratio: 1/1 !important; background-color: #F6F6F6;color: black;display: flex;align-items: center;justify-content: center; border-radius: 5px; font-size: 0.6rem; cursor: pointer;">
+                                2</div>
+                            <div
+                                style="width: 2rem;height: 2rem; padding: 4px; aspect-ratio: 1/1 !important; background-color: #F6F6F6;color: black;display: flex;align-items: center;justify-content: center; border-radius: 5px; font-size: 0.6rem; cursor: pointer;">
+                                3</div>
+                            <div style="font-size: 0.8rem;">. . .</div>
+                            <div
+                                style="width: 2rem;height: 2rem; padding: 4px; aspect-ratio: 1/1 !important; background-color: #F6F6F6;color: black;display: flex;align-items: center;justify-content: center; border-radius: 5px; font-size: 0.6rem; cursor: pointer;">
+                                12</div>
+                            <div><img src="./Recources/مخلفات/RightArrow.svg" alt=""></div>
+                        </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footers">
+            <div class="footer-col footer-brand">
+                <h2>cyber</h2>
+                <p>We are a residential interior design</br> studio in Portland, creating more than</br> spaces we craft
+                    experiences</p>
+                <div class="fimg">
+                    <a><img src="Twitter.png" alt=""></a>
+                    <a><img src="Vector12.png" alt=""></a>
+                    <a><img src="Vector10.png" alt=""></a>
+                    <a><img src="Instagram.png" alt=""></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a>Bonus program</a></li>
+                    <li><a>Gift cards</a></li>
+                    <li><a>Credit and payment</a></li>
+                    <li><a>Service contracts</a></li>
+                    <li><a>Non-cash account</a></li>
+                    <li><a>Payment</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Assistance to the buyer</h3>
+                <ul>
+                    <li><a>Find an order</a></li>
+                    <li><a>Terms of delivery</a></li>
+                    <li><a>Exchange and return of goods</a></li>
+                    <li><a>Guarantee</a></li>
+                    <li><a>FAQ</a></li>
+                    <li><a>Terms of use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Cyber Studio. All rights reserved.
+        </div>
+    </footer>
+</body>
+<script>
+    document.querySelectorAll('.card1 img').forEach(img => {
+        img.style.cursor = 'pointer'; // UX
+        img.addEventListener('click', () => {
+            const altSrc = img.dataset.alt;      // مسیر جایگزین
+            if (!altSrc) return;                 // اگر داده‌ای نیست کاری نکن
+            const current = img.src;             // نگه‌داشتن src فعلی
+            img.src = altSrc;                    // بذار عکس جایگزین بشه
+            img.dataset.alt = current;           // و مقدار قدیمی رو تو data-alt بذار
+        });
+    });
+
+    /* Filters accordion behaviour (scoped) */
+    (function () {
+        // toggles for each group
+        const toggles = document.querySelectorAll('.filters-accordion .filter-toggle');
+        toggles.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                const panel = document.getElementById(btn.getAttribute('aria-controls'));
+                // toggle
+                btn.setAttribute('aria-expanded', String(!expanded));
+                if (!expanded) {
+                    panel.classList.add('expanded');
+                } else {
+                    panel.classList.remove('expanded');
+                }
+            });
+        });
+
+        // Brand search filtering
+        const brandSearch = document.getElementById('brand-search-input');
+        const clearBtn = document.querySelector('.brand-search .clear-search');
+        const brandList = document.getElementById('brand-list');
+
+        if (brandSearch) {
+            brandSearch.addEventListener('input', (e) => {
+                const q = e.target.value.trim().toLowerCase();
+                Array.from(brandList.children).forEach(li => {
+                    const name = li.querySelector('.name').textContent.toLowerCase();
+                    li.style.display = name.includes(q) ? '' : 'none';
+                });
+            });
+            clearBtn.addEventListener('click', () => {
+                brandSearch.value = '';
+                brandSearch.dispatchEvent(new Event('input'));
+            });
+        }
+
+        // Ensure brand panel is open by default (matching screenshot)
+        const brandPanel = document.getElementById('panel-brand');
+        if (brandPanel) {
+            brandPanel.classList.add('expanded');
+            const brandToggle = document.querySelector('[aria-controls="panel-brand"]');
+            if (brandToggle) brandToggle.setAttribute('aria-expanded', 'true');
+        }
+
+        // nice accessibility: close panels with Escape when focused inside
+        document.querySelectorAll('.filter-panel').forEach(panel => {
+            panel.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const id = panel.id;
+                    const btn = document.querySelector(`[aria-controls="${id}"]`);
+                    if (btn) { btn.click(); btn.focus(); }
+                }
+            });
+        });
+    })();
+
+</script>
+
+</html>
