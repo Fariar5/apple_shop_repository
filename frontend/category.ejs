@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/category.css">
+    <link rel="stylesheet" href="/css/category.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Vazirmatn:wght@100..900&display=swap"
         rel="stylesheet">
-    <title>Document</title>
+    <title>cyber</title>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./Recources/Logo.png" />
+            <img src="/Recources/Logo.png" />
         </div>
         <div class="search">
             <div class="search-box">
-                <button><img src="./Recources/Search.png" /></button>
+                <button><img src="/Recources/Search.png" /></button>
                 <input type="text" placeholder="Search">
 
             </div>
@@ -37,22 +37,22 @@
         </div>
         <div class="icons">
             <a>
-                <img class="one" src="./Recources/1.png" />
+                <img class="one" src="/Recources/1.png" />
             </a>
             <a>
-                <img class="two" src="./Recources/Cart1.png" />
+                <img class="two" src="/Recources/Cart1.png" />
             </a>
             <a>
-                <img class="three" src="./Recources/Vector.png" />
+                <img class="three" src="/Recources/Vector.png" />
             </a>
         </div>
     </header>
     <div style="padding: 15px 5%; display: flex; gap: 2rem;">
         <div style="color: #A4A4A4;">Home</div>
-        <div><img src="./Recources/مخلفات/Arrow.png"></div>
+        <div><img src="/Recources/مخلفات/Arrow.png"></div>
         <div style="color: #A4A4A4;">Catalog</div>
-        <div><img src="./Recources/مخلفات/Arrow.png"></div>
-        <div>Smartphones</div>
+        <div><img src="/Recources/مخلفات/Arrow.png"></div>
+        <div><%= categoryName %></div>
     </div>
     <section>
         <div class="left-section">
@@ -184,25 +184,26 @@
 
         </div>
         <div class="right-section">
-            <div style="color: #6C6C6C; margin-bottom: 1rem;">Selected Products:<span style="color: black;">85</span>
+            <div style="color: #6C6C6C; margin-bottom: 1rem;">Selected Products:<span style="color: black;"><%= count %></span>
             </div>
             <div class="grid-cont">
 
 
-                <% content.forEach(product=>{ %>
+                <!-- products session -->
+                <% products.forEach(product=>{ %>
                     <div class="in-grid">
-                        <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
-                                data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
-                        <div class="card2"><img src="./Recources/Iphones/<%=product.name%>-<%=product.model%>-<%=product.price%>.png" alt=""></div>
+                        <div class="card1"><img src="/Recources/مخلفات/Favorite_duotone.png"
+                                data-alt="/Recources/مخلفات/filled-duotone.png" alt=""></div>
+                        <div class="card2"><img src="/Recources/Iphones/<%=product.image_url%>.png" alt=""></div>
                         <div class="card3">
-                            <p><%=product.name%> <%=product.model%></br></br></p>
+                            <p><%=product.name%></br></br></p>
                         </div>
                         <div class="card4"><strong>$<%=product.price%></strong></div>
                         <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
                     </div>
                 <% }) %>
                 
-                        <!-- <div class="in-grid">
+                <!-- <div class="in-grid">
                     <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
                             data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
                     <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
@@ -211,79 +212,11 @@
                     </div>
                     <div class="card4"><strong>$1499</strong></div>
                     <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
-                </div>
-                <div class="in-grid">
-                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
-                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
-                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
-                    <div class="card3">
-                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
-                    </div>
-                    <div class="card4"><strong>$1499</strong></div>
-                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
-                </div>
-                <div class="in-grid">
-                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
-                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
-                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
-                    <div class="card3">
-                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
-                    </div>
-                    <div class="card4"><strong>$1499</strong></div>
-                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
-                </div>
-                <div class="in-grid">
-                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
-                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
-                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
-                    <div class="card3">
-                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
-                    </div>
-                    <div class="card4"><strong>$1499</strong></div>
-                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
-                </div>
-                <div class="in-grid">
-                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
-                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
-                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
-                    <div class="card3">
-                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
-                    </div>
-                    <div class="card4"><strong>$1499</strong></div>
-                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
-                </div>
-                <div class="in-grid">
-                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
-                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
-                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
-                    <div class="card3">
-                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
-                    </div>
-                    <div class="card4"><strong>$1499</strong></div>
-                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
-                </div>
-                <div class="in-grid">
-                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
-                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
-                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
-                    <div class="card3">
-                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
-                    </div>
-                    <div class="card4"><strong>$1499</strong></div>
-                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
-                </div>
-                <div class="in-grid">
-                    <div class="card1"><img src="./Recources/مخلفات/Favorite_duotone.png"
-                            data-alt="./Recources/مخلفات/filled-duotone.png" alt=""></div>
-                    <div class="card2"><img src="./Recources/Iphones/Iphone 14 pro 1.png" alt=""></div>
-                    <div class="card3">
-                        <p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p>
-                    </div>
-                    <div class="card4"><strong>$1499</strong></div>
-                    <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
-                </div> -->
+                </div>-->
+
+
                         <div class="dahaomi">
-                            <div><img src="./Recources/مخلفات/LeftArrow.svg" alt=""></div>
+                            <div><img src="/Recources/مخلفات/LeftArrow.svg" alt=""></div>
                             <div
                                 style="width: 2rem;height: 2rem; padding: 4px; aspect-ratio: 1/1 !important; background-color: black;color: white;display: flex;align-items: center;justify-content: center; border-radius: 5px; font-size: 0.6rem; cursor: pointer;">
                                 1</div>
@@ -297,7 +230,7 @@
                             <div
                                 style="width: 2rem;height: 2rem; padding: 4px; aspect-ratio: 1/1 !important; background-color: #F6F6F6;color: black;display: flex;align-items: center;justify-content: center; border-radius: 5px; font-size: 0.6rem; cursor: pointer;">
                                 12</div>
-                            <div><img src="./Recources/مخلفات/RightArrow.svg" alt=""></div>
+                            <div><img src="/Recources/مخلفات/RightArrow.svg" alt=""></div>
                         </div>
             </div>
         </div>
@@ -309,10 +242,10 @@
                 <p>We are a residential interior design</br> studio in Portland, creating more than</br> spaces we craft
                     experiences</p>
                 <div class="fimg">
-                    <a><img src="Twitter.png" alt=""></a>
-                    <a><img src="Vector12.png" alt=""></a>
-                    <a><img src="Vector10.png" alt=""></a>
-                    <a><img src="Instagram.png" alt=""></a>
+                    <a><img src="images/Twitter.png" alt=""></a>
+                    <a><img src="images/Vector12.png" alt=""></a>
+                    <a><img src="images/Vector10.png" alt=""></a>
+                    <a><img src="images/Instagram.png" alt=""></a>
                 </div>
             </div>
             <div class="footer-col">
