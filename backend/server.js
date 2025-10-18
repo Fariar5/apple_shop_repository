@@ -5,6 +5,7 @@ import path from 'path';
 import cors from "cors";
 import dotenv from "dotenv";
 import db from "./DB/config.js";
+import queries from "./query.js";
 
 dotenv.config()
 
@@ -24,35 +25,43 @@ app.use(cors());
 
 
 app.get("/", async (req, res) => {
-    try{
+    try {
         const selecetRandomProduct = await db.query("SELECT * FROM products")
-        res.render("index.ejs" , {content : selecetRandomProduct.rows})
-    }catch(err){
+        res.render("index.ejs", { content: selecetRandomProduct.rows })
+    } catch (err) {
         res.status(500)
     }
 })
 
 
-app.get("/login",(req,res)=>{
+app.get("/login", (req, res) => {
     res.render("login_signup.ejs")
 })
 
 
-app.get("/phone_category",async (req,res)=>{
-    try{
-        const selectspecifiedproduct = await db.query("SELECT * FROM products WHERE category=$1;" , ["phone"])
-        res.render("category.ejs" , {content : selectspecifiedproduct.rows})
-    }catch(err){}
+app.get("/category/:id", async (req, res) => {
+    const id = parseInt(req.params.id)
+
+    try {
+        const selectspecifiedproduct = await queries.searchByCategories(id);
+        const count = await queries.getCountOfProducts(id)
+        const categoryName = await queries.getNameOfCategory(id)
+
+        res.render("category.ejs", { products: selectspecifiedproduct , count: count , categoryName : categoryName})
+    } catch (err) {
+        console.error("Error in /category/:id:", err);
+        res.status(500).send("Server error");
+    }
 })
 
 
-app.get("/product/:id",async (req,res)=>{
+app.get("/product/:id", async (req, res) => {
     const id = parseInt(req.params.id)
 
-    try{
-        const product = await db.query("SELECT * FROM products WHERE id=$1",[id])
-        res.render("product.ejs",{content: product.rows[0]})
-    }catch(err){
+    try {
+        const product = await db.query("SELECT * FROM products WHERE id=$1", [id])
+        res.render("product.ejs", { content: product.rows[0] })
+    } catch (err) {
         res.status(500)
     }
 })
