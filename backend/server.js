@@ -6,6 +6,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import db from "./DB/config.js";
 import queries from "./query.js";
+import { profile } from "console";
 
 dotenv.config()
 
@@ -26,8 +27,8 @@ app.use(cors());
 
 app.get("/", async (req, res) => {
     try {
-        const selecetRandomProduct = await db.query("SELECT * FROM products")
-        res.render("index.ejs", { content: selecetRandomProduct.rows })
+        const products = await queries.getRandomProduct()
+        res.render("index.ejs", { content: products})
     } catch (err) {
         res.status(500)
     }
@@ -38,16 +39,25 @@ app.get("/login", (req, res) => {
     res.render("login_signup.ejs")
 })
 
+//go to product page when press buy now btn
+app.get("/product/:id",async (req,res)=>{
+    const id = parseInt(req.params.id)
+    try{
+        const getSpecifiedProduct = await queries.getSpecifiedProduct(id)
+        res.render("product.ejs",{content : getSpecifiedProduct})
+    }catch(err){}
+})
+
 
 app.get("/category/:id", async (req, res) => {
     const id = parseInt(req.params.id)
 
     try {
-        const selectspecifiedproduct = await queries.searchByCategories(id);
+        const searchByCategory = await queries.searchByCategories(id);
         const count = await queries.getCountOfProducts(id)
         const categoryName = await queries.getNameOfCategory(id)
 
-        res.render("category.ejs", { products: selectspecifiedproduct , count: count , categoryName : categoryName})
+        res.render("category.ejs", { products: searchByCategory , count: count , categoryName : categoryName})
     } catch (err) {
         console.error("Error in /category/:id:", err);
         res.status(500).send("Server error");

@@ -127,14 +127,17 @@
       <h2></h2>      
       <div class="product">
         <div class="products">
-          <div class="product-card1">            
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/iphone-compare-iphone-17-pro-202509.png" alt=""></div>
-            <div class="card43"><p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p> </div>
-            <div class="card44"><strong>$1499</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>            
-          </div>
-          <div class="product-card2">
+
+          <% content.forEach(product =>{ %>
+            <div class="product-card<%=product.id%>">            
+              <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
+              <div class="card42"><img src="Recources/image/<%= product.id %>_<%= product.name %>/1.png" alt=""></div>
+              <div class="card43"><p><%= product.name %></br></br></p> </div>
+              <div class="card44"><strong>$<%= product.price %></strong></div>
+              <div class="card45"><a class="btnp" href="/product/<%= product.id %>">Shop Now</a></div>            
+            </div>
+          <% }) %>
+          <!-- <div class="product-card2">
             <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
             <div class="card42"><img src="images/Iphone 14 pro 1.png" alt=""></div>
             <div class="card43"><p>Blackmagic Pocket</br>Cinema Camera 6k</br></p> </div>
@@ -210,7 +213,7 @@
             <div class="card43"><p>Apple iPad 9 10.2" 64GB Wi-Fi</br> Silver (MK2L3) 2021</br></p> </div>
             <div class="card44"><strong>$398</strong></div>
             <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>                                      
+          </div>                                       -->
         </div>
       </div>
     </div>    
