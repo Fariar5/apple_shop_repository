@@ -1,6 +1,20 @@
-import express from "express";
 import db from "./DB/config.js";
 
+
+//get some product for render in home page
+const getRandomProduct = async () => {
+    // const Text = "SELECT * FROM products WHERE id BETWEEN $1 AND $2";
+    const Text = "SELECT * FROM products";
+    const result = await db.query(Text);
+    return result.rows
+}
+
+//get specified product detail
+const getSpecifiedProduct = async (product_id)=>{
+    const Text = "SELECT * FROM products WHERE id = $1";
+    const result = await db.query(Text,[product_id]);
+    return result.rows[0]
+}
 
 //get name of category 
 const getNameOfCategory = async (category_id) =>{
@@ -30,6 +44,6 @@ const getAllProducts = async () =>{
 
 
 //initials queries
-const queries = {searchByCategories,getCountOfProducts,getNameOfCategory}
+const queries = {searchByCategories,getCountOfProducts,getNameOfCategory,getRandomProduct,getSpecifiedProduct}
 //export queries
 export default queries;
