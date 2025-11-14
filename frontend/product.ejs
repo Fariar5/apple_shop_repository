@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product</title>
     <link rel="stylesheet" href="/css/products.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
 
         <div class="list">
             <ul class="list-links">
-                <li><a>Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a>About</a></li>
                 <li><a>Contact us</a></li>
                 <li><a>blog</a></li>
@@ -38,10 +38,10 @@
             <a>
                 <img class="one" src="/Recources/1.png" />
             </a>
-            <a>
+            <a href="/shoppingCard">
                 <img class="two" src="/Recources/Cart1.png" />
             </a>
-            <a>
+            <a href="/login_signup">
                 <img class="three" src="/Recources/Vector.png" />
             </a>
         </div>
@@ -59,10 +59,13 @@
 
         </div>
         <div class="right__main">
-            <h1><%=content.name%></h1>
+            <h1>
+                <%=content.name%>
+            </h1>
             <div class="priceTag">
-                <h3 class="mainPrice">$<%=content.price%></h3>
-                <h3 class="offPrice">$1699</h3>
+                <h3 class="mainPrice">$<%=content.price%>
+                </h3>
+                <!-- <h3 class="offPrice">$1699</h3> -->
             </div>
             <div class="selectColor">
                 <div>Select Color:</div>
@@ -76,64 +79,88 @@
                 <div class="storages">128GB</div>
                 <div class="storages">256GB</div>
                 <div class="storages">512GB</div>
-                <div class="storages">1TB</div>
+                <div class="storages"><button>1TB</button></div>
             </div>
             <div class="properties">
                 <div class="property">
                     <img src="/Recources/p-SVGs/Screensize.svg" alt="">
                     <div class="p-Cont">
-                        <div>Screen size</div>
-                        <div style="color: #4E4E4E;">6.7"</div>
+                        <div>
+                            <%= detail[0].specification_name %>
+                        </div>
+                        <div style="color: #4E4E4E;">
+                            <%= detail[0].value %>
+                        </div>
                     </div>
                 </div>
                 <div class="property">
                     <img src="/Recources/p-SVGs/smartphone-rotate-2-svgrepo-com 2.svg" alt="">
 
                     <div class="p-Cont">
-                        <div>CPU</div>
-                        <div style="color: #4E4E4E;">Apple A16 Bionic</div>
+                        <div>
+                            <%= detail[1].specification_name %>
+                        </div>
+                        <div style="color: #4E4E4E;">
+                            <%= detail[1].value %>
+                        </div>
                     </div>
                 </div>
                 <div class="property">
                     <img src="/Recources/p-SVGs/smartphone-rotate-3-svgrepo-com 2.svg" alt="">
 
                     <div class="p-Cont">
-                        <div>Number of Cores</div>
-                        <div style="color: #4E4E4E;">6</div>
+                        <div>
+                            <%= detail[2].specification_name %>
+                        </div>
+                        <div style="color: #4E4E4E;">
+                            <%= detail[2].value %>
+                        </div>
                     </div>
                 </div>
                 <div class="property">
                     <img src="/Recources/p-SVGs/smartphone-rotate-4-svgrepo-com 2.svg" alt="">
 
                     <div class="p-Cont">
-                        <div>Main camera</div>
-                        <div style="color: #4E4E4E;">48-12 -12 MP</div>
+                        <div>
+                            <%= detail[3].specification_name %>
+                        </div>
+                        <div style="color: #4E4E4E;">
+                            <%= detail[3].value %>
+                        </div>
                     </div>
                 </div>
                 <div class="property">
                     <img src="/Recources/p-SVGs/smartphone-rotate-5-svgrepo-com 2.svg" alt="">
 
                     <div class="p-Cont">
-                        <div>Front-camera</div>
-                        <div style="color: #4E4E4E;">12 MP</div>
+                        <div>
+                            <%= detail[4].specification_name %>
+                        </div>
+                        <div style="color: #4E4E4E;">
+                            <%= detail[4].value %>
+                        </div>
                     </div>
                 </div>
                 <div class="property">
                     <img src="/Recources/p-SVGs/smartphone-rotate-2-svgrepo-com 6.svg" alt="">
 
                     <div class="p-Cont">
-                        <div>Battery capacity</div>
-                        <div style="color: #4E4E4E;">4323 mAh</div>
+                        <div>
+                            <%= detail[5].specification_name %>
+                        </div>
+                        <div style="color: #4E4E4E;">
+                            <%= detail[5].value %>
+                        </div>
                     </div>
                 </div>
 
             </div>
-            <p class="raw-Text">Enhanced capabilities thanks toan enlarged display of 6.7 inchesand work without
+            <!-- <p class="raw-Text">Enhanced capabilities thanks toan enlarged display of 6.7 inchesand work without
                 rechargingthroughout the
-                day. Incredible photosas in weak, yesand in bright lightusing the new systemwith two cameras more...</p>
+                day. Incredible photosas in weak, yesand in bright lightusing the new systemwith two cameras more...</p> -->
             <div class="addButtons">
                 <button class="white-add">Add to Wishlist</button>
-                <button class="black-add">Add to Card</button>
+                <button class="black-add"><a href="/<%=content.id%>/add-to-cart" style="color: #E8E8E8;">Add to Card</a></button>
             </div>
             <div class="second__property">
                 <div class="2nd-proprty"></div>
@@ -165,7 +192,9 @@
                     </div>
                     <div class="p-Cont">
                         <div>Guaranteed</div>
-                        <div style="color: black;">1 year</div>
+                        <div style="color: black;">
+                            <%= detail[10].value %>
+                        </div>
                     </div>
                 </div>
 
@@ -185,53 +214,16 @@
                 And last year's 6.7-inch Retina panels, which had ProMotion, caused real admiration for many.</p>
             <div class="Title">Screens</div>
             <ul>
-                <li class="screens">
-                    <div>Screen diagonal</div>
-                    <div>6.7"</div>
-                </li>
-                <li class="screens">
-                    <div>The screen resolution</div>
-                    <div>2796x1290</div>
-                </li>
-                <li class="screens">
-                    <div>The screen refresh rate</div>
-                    <div>120 Hz</div>
-                </li>
-                <li class="screens">
-                    <div>The pixel density</div>
-                    <div>460 ppi</div>
-                </li>
-                <li class="screens">
-                    <div>Additionally</div>
-                    <div style="display: flex; flex-direction: column; text-align: end; gap: 0.5rem;">
-                        <div>Dynamic Island</div>
-                        <div>Always-On display</div>
-                        <div>HDR display</div>
-                        <div>True Tone</div>
-                        <div>Wide color (P3)</div>
-                    </div>
-                </li>
-                <li class="screens">
-                    <div>The pixel density</div>
-                    <div>460 ppi</div>
-                </li>
-                <li class="screens">
-                    <div>The pixel density</div>
-                    <div>460 ppi</div>
-                </li>
-                <li class="screens">
-                    <div>The pixel density</div>
-                    <div>460 ppi</div>
-                </li>
-                <div class="Title">CPU</div>
-                <li class="screens">
-                    <div>CPU</div>
-                    <div>A16 Bionic</div>
-                </li>
-                <li class="screens">
-                    <div>Number of cores</div>
-                    <div>6</div>
-                </li>
+                <%detail.forEach(items=>{%>
+                    <li class="screens">
+                        <div>
+                            <%= items.specification_name %>
+                        </div>
+                        <div>
+                            <%= items.value %>
+                        </div>
+                    </li>
+                    <%})%>
             </ul>
             <div style="width: 100%;display: flex; justify-content: center; align-items: center; padding-top: 2rem;">
                 <button class="viewMore-btn">View More<img src="/Recources/مخلفات/Arrow Down.png"></button>
@@ -254,7 +246,7 @@
             <aside class="rv-summary">
                 <div class="rv-summary-card" aria-roledescription="rating summary">
                     <div class="rv-score">4.8</div>
-                    <div class="rv-score-sub">of 125 reviews</div>
+                    <div class="rv-score-sub">of reviews</div>
                     <div class="rv-stars-row" aria-hidden="true">
                         <div class="rv-stars" data-rating="4.5"></div>
                     </div>
@@ -264,7 +256,8 @@
                     <div class="rv-row" title="Excellent">
                         <div class="rv-label">Excellent</div>
                         <div style="display:flex;align-items:center;gap:8px;width:100% !important; position: relative;">
-                            <div class="rv-track" data-percent="80" style="position: absolute !important; right: 2rem !important;">
+                            <div class="rv-track" data-percent="80"
+                                style="position: absolute !important; right: 2rem !important;">
                                 <div class="rv-fill"></div>
                             </div>
                             <div class="rv-count">100</div>
@@ -337,7 +330,24 @@
             </div>
             <!-- Right reviews list -->
             <section class="rv-list" aria-label="Customer reviews">
-                <article class="rv-card" aria-label="Review: Grace Carey">
+                <%comments.forEach(comment=>{%>
+                    <article class="rv-card" aria-label="Review: Grace Carey">
+                        <div class="rv-avatar"><img
+                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=60"
+                                alt="Grace Carey"></div>
+                        <div class="rv-body">
+                            <div class="rv-head">
+                                <div class="rv-meta">
+                                    <div class="rv-name"><%=comment.username%></div>
+                                    <div class="rv-stars-inline" data-rating="4.0"></div>
+                                </div>
+                                <div class="rv-date">24 January, 2023</div>
+                            </div>
+                            <div class="rv-text"><%=comment.text%></div>
+                        </div>
+                    </article>
+                <%})%>
+                <!-- <article class="rv-card" aria-label="Review: Grace Carey">
                     <div class="rv-avatar"><img
                             src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=60"
                             alt="Grace Carey"></div>
@@ -353,9 +363,9 @@
                             couldn’t be happier with my purchase! I bought an Unlocked black iPhone 14 Pro Max in
                             excellent condition and everything is PERFECT. Highly recommend!!!</div>
                     </div>
-                </article>
+                </article> -->
 
-                <article class="rv-card" aria-label="Review: Ronald Richards">
+                <!-- <article class="rv-card" aria-label="Review: Ronald Richards">
                     <div class="rv-avatar"><img
                             src="https://images.unsplash.com/photo-1545996124-1b1d6f67a3b2?w=300&q=60" alt="Ronald">
                     </div>
@@ -393,7 +403,7 @@
                                 alt="attachment2">
                         </div>
                     </div>
-                </article>
+                </article> -->
 
                 <div class="rv-more-wrap">
                     <button class="rv-more" aria-expanded="false">View More</button>

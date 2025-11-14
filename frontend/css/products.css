@@ -7,6 +7,11 @@
     --star-empty: #e6e6e6;
 }
 
+
+a{
+    text-decoration: none;
+}
+
 /* base */
 .star {
     display: inline-block;

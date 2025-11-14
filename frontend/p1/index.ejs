@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/p1.css">
+  <title>Footer Centered</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="/p1/re/Logo.png" />
+    </div>
+    <div class="search">
+      <div class="search-box">
+        <button><img src="/p1/re/Search.png" /></button>
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+    <div class="list">
+      <ul class="list-links">
+        <li><a href="/">Home</a></li>
+        <li><a>About</a></li>
+        <li><a>Contact us</a></li>
+        <li><a>blog</a></li>
+      </ul>
+    </div>
+    <div class="icons">
+      <a>
+        <img class="one" src="/p1/re/1.png" />
+      </a>
+      <a>
+        <img class="two" src="/p1/re/Cart1.png" />
+      </a>
+      <a>
+        <img class="three" src="/p1/re/Vector.png" />
+      </a>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <section class="cart">
+        <h2>Shopping Cart</h2>
+          <%if(content[1]){%>
+            <% content.forEach(item=>{ %>
+
+            <div class="item">
+              <img src="/Recources/image/<%=item.product_id%>_<%=item.name%>/1.png" alt="<%=item.name%>" />
+              <div class="item-details">
+                <strong><a href="/product/<%=item.product_id%>"></a><%=item.name%></strong>
+                <small>#<%=item.product_id%></small>
+              </div>
+              <div class="quantity">
+                <button aria-label="Decrease quantity">−</button>
+                <input type="number" min="1" aria-label="Quantity" value="<%=item.quantity%>" />
+                <button aria-label="Increase quantity">+</button>
+              </div>
+              <div class="price">$<%=item.price%>
+              </div>
+              <a class="remove" href="/removeItem/<%=item.cart_item_id%>" role="button" aria-label="Remove item">×</a>
+            </div>
+          <%})}else if(content[0] && !content[1]){%>
+
+              <div class="item">
+                <img src="/Recources/image/<%=content[0].product_id%>_<%=content[0].name%>/1.png" alt="<%=content[0].name%>" />
+                <div class="item-details">
+                  <strong><a href="/product/<%=content[0].product_id%>" style="color: black;"><%=content[0].name%></a></strong>
+                  <small>#<%=content[0].product_id%></small>
+                </div>
+                <div class="quantity">
+                  <button aria-label="Decrease quantity">−</button>
+                  <input type="number" min="1" aria-label="Quantity" value="<%=content[0].quantity%>" />
+                  <button aria-label="Increase quantity">+</button>
+                </div>
+                <div class="price">$<%=content[0].price%>
+                </div>
+                <a class="remove" href="/removeItem/<%=content[0].cart_item_id%>" role="button" aria-label="Remove item">×</a>
+              </div>
+        <%}else{%>
+          <p>no product</p>
+          <%}%>
+      </section>
+      <aside class="summary">
+        <h3>Order Summary</h3>
+        <label for="discount-code">Discount code / Promo code</label>
+        <input type="text" id="discount-code" placeholder="Code" />
+        <label for="bonus-card">Your bonus card number</label>
+        <div class="card-input">
+          <input type="text" id="bonus-card" placeholder="Enter Card Number" />
+          <button type="button">Apply</button>
+        </div>
+        <div class="row">
+          <div>Subtotal</div>
+          <div><strong>$<%=totalPrice%></strong></div>
+        </div>
+        <div class="row">
+          <div>Estimated Tax</div>
+          <div>$50</div>
+        </div>
+        <div class="row">
+          <div>Estimated shipping &amp; Handling</div>
+          <div>$29</div>
+        </div>
+        <div class="row total">
+          <div>Total</div>
+          <div>$<%=totalPrice%></div>
+        </div>
+        <a class="checkout-btn" href="/verifyAddres" type="button">Checkout</a>
+      </aside>
+    </div>
+  </main>
+  <footer>
+    <div class="footers">
+      <div class="footer-col footer-brand">
+        <h2>cyber</h2>
+        <p>We are a residential interior design</br> studio in Portland, creating more than</br> spaces we craft
+          experiences</p>
+        <div class="fimg">
+          <a><img src="re/Twitter.png" alt=""></a>
+          <a><img src="re/Vector12.png" alt=""></a>
+          <a><img src="re/Vector10.png" alt=""></a>
+          <a><img src="re/Instagram.png" alt=""></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          <li><a>Bonus program</a></li>
+          <li><a>Gift cards</a></li>
+          <li><a>Credit and payment</a></li>
+          <li><a>Service contracts</a></li>
+          <li><a>Non-cash account</a></li>
+          <li><a>Payment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Assistance to the buyer</h3>
+        <ul>
+          <li><a>Find an order</a></li>
+          <li><a>Terms of delivery</a></li>
+          <li><a>Exchange and return of goods</a></li>
+          <li><a>Guarantee</a></li>
+          <li><a>FAQ</a></li>
+          <li><a>Terms of use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 Cyber Studio. All rights reserved.
+    </div>
+  </footer>
+</body>
+
+</html>

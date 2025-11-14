@@ -29,7 +29,7 @@
 
         <div class="list">
             <ul class="list-links">
-                <li><a>Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a>About</a></li>
                 <li><a>Contact us</a></li>
                 <li><a>blog</a></li>
@@ -42,17 +42,17 @@
             <a>
                 <img class="two" src="/Recources/Cart1.png" />
             </a>
-            <a>
+            <a href="/login_signup">
                 <img class="three" src="/Recources/Vector.png" />
             </a>
         </div>
     </header>
     <div style="padding: 15px 5%; display: flex; gap: 2rem;">
-        <div style="color: #A4A4A4;">Home</div>
+        <a style="color: #A4A4A4; text-decoration: none;" href="/">Home</a>
         <div><img src="/Recources/مخلفات/Arrow.png"></div>
         <div style="color: #A4A4A4;">Catalog</div>
         <div><img src="/Recources/مخلفات/Arrow.png"></div>
-        <div><%= categoryName %></div>
+        <div><%= categoryName.name %></div>
     </div>
     <section>
         <div class="left-section">
@@ -199,7 +199,7 @@
                             <p><%=product.name%></br></br></p>
                         </div>
                         <div class="card4"><strong>$<%=product.price%></strong></div>
-                        <div class="card5"><a><button class="btnp">Buy Now</button></a></div>
+                        <div class="card5"><a href="/product/<%=product.id%>"><button class="btnp">Buy Now</button></a></div>
                     </div>
                 <% }) %>
                 
