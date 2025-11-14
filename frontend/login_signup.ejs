@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login / Sign Up</title>
+  <style>
+    :root{
+      --primary: #2563eb;
+      --primary-light: #60a5fa;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --danger: #dc2626;
+      font-family: "Poppins", "Segoe UI", Roboto, system-ui, -apple-system, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;padding:0;background:var(--bg);color:var(--text)}
+    body{display:flex;align-items:center;justify-content:center;padding:30px;}
+    .container{
+      width:100%;
+      max-width:960px;
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:32px;
+      align-items:center;
+    }
+
+    .promo{
+      background:linear-gradient(135deg, var(--primary-light), var(--primary));
+      border-radius:16px;
+      color:white;
+      padding:40px;
+      min-height:420px;
+      display:flex;flex-direction:column;justify-content:center;
+      box-shadow:0 8px 20px rgba(37,99,235,0.25);
+    }
+    .promo h1{margin:0 0 8px;font-size:32px;}
+    .promo p{margin:0;font-size:16px;opacity:0.9;line-height:1.6;}
+    .features{margin-top:24px;display:grid;gap:10px;}
+    .feature{display:flex;align-items:center;gap:8px;font-size:15px;}
+    .feature .dot{
+      width:10px;height:10px;border-radius:50%;background:white;opacity:0.8;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .tabs{display:flex;gap:8px;margin-bottom:16px;}
+    .tab{
+      padding:8px 16px;
+      border-radius:8px;
+      border:1px solid transparent;
+      background:transparent;
+      cursor:pointer;
+      color:var(--muted);
+      font-weight:600;
+      transition:all .25s;
+    }
+    .tab.active{
+      background:var(--primary);
+      color:white;
+      box-shadow:0 4px 10px rgba(37,99,235,0.25);
+    }
+
+    form{display:flex;flex-direction:column;gap:12px;}
+    label{font-size:14px;font-weight:500;}
+    input[type="text"],input[type="email"],input[type="password"]{
+      width:100%;
+      padding:12px 14px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:white;
+      outline:none;
+      transition:border-color .2s, box-shadow .2s;
+    }
+    input:focus{
+      border-color:var(--primary);
+      box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+    }
+
+    .actions{display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+    .btn{
+      padding:10px 16px;
+      border-radius:8px;
+      border:none;
+      background:var(--primary);
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      transition:background .2s;
+    }
+    .btn:hover{background:#1d4ed8;}
+    .btn.ghost{
+      background:white;
+      border:1px solid var(--border);
+      color:var(--text);
+    }
+
+    .hint{font-size:13px;color:var(--muted);}
+    .error{color:var(--danger);font-size:13px;}
+    .success{color:var(--success);font-size:13px;}
+
+    @media(max-width:900px){
+      .container{grid-template-columns:1fr;}
+      .promo{display:none;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="promo">
+      <h1>Welcome Back!</h1>
+      <p>Experience a clean and modern interface for logging in or creating an account. Fast, responsive, and secure.</p>
+      <div class="features">
+        <div class="feature"><div class="dot"></div> Modern and light design</div>
+        <div class="feature"><div class="dot"></div> Mobile-friendly</div>
+        <div class="feature"><div class="dot"></div> Quick social logins</div>
+        <div class="feature"><div class="dot"></div> Real-time validation</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tabs">
+        <button class="tab active" id="tab-login">Login</button>
+        <button class="tab" id="tab-signup">Sign Up</button>
+      </div>
+
+      <form id="form-login" method="post" action="/login" >
+        <label for="login-email">Email or Username</label>
+        <input type="text" id="login-email" name="email1" placeholder="you@example.com" required>
+        <label for="login-pass">Password</label>
+        <input type="password" id="login-pass" name="pass1" placeholder="••••••••" required>
+        <div class="actions">
+          <label><input type="checkbox" id="remember"> Remember me</label>
+          <a href="#" class="hint">Forgot password?</a>
+        </div>
+        <button class="btn" type="submit">Login</button>
+        <button class="btn ghost" id="to-signup" type="button">Create an account</button>
+        <div id="login-msg" style="margin-top:6px;"></div>
+      </form>
+
+      <form id="form-signup" style="display:none;" method="POST" action="/signUp">
+        <label for="signup-name">Full Name</label>
+        <input type="text" id="signup-name" placeholder="John Doe" name="username" required>
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" placeholder="you@example.com" name="email" required>
+        <label for="signup-pass">Password</label>
+        <input type="password" id="signup-pass" placeholder="At least 6 characters" name="pass" required>
+        <label for="signup-pass2">Confirm Password</label>
+        <input type="password" id="signup-pass2" placeholder="Repeat password" name="pass2" required>
+        <div id="pass-error" class="error" style="display:none;">Passwords do not match.</div>
+        <button class="btn" type="submit">Sign Up</button>
+        <button class="btn ghost" id="to-login" type="button">I already have an account</button>
+        <div id="signup-msg" style="margin-top:6px;"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const tabLogin=document.getElementById('tab-login');
+    const tabSignup=document.getElementById('tab-signup');
+    const formLogin=document.getElementById('form-login');
+    const formSignup=document.getElementById('form-signup');
+    const toSignup=document.getElementById('to-signup');
+    const toLogin=document.getElementById('to-login');
+
+    function showLogin(){
+      tabLogin.classList.add('active');tabSignup.classList.remove('active');
+      formLogin.style.display='flex';formSignup.style.display='none';
+    }
+    function showSignup(){
+      tabSignup.classList.add('active');tabLogin.classList.remove('active');
+      formLogin.style.display='none';formSignup.style.display='flex';
+    }
+    tabLogin.onclick=showLogin;
+    tabSignup.onclick=showSignup;
+    toSignup.onclick=showSignup;
+    toLogin.onclick=showLogin;
+
+    // Basic validation feedback
+    formLogin.addEventListener('submit',e=>{
+      // e.preventDefault();
+      const user=document.getElementById('login-email').value.trim();
+      const pass=document.getElementById('login-pass').value;
+      const msg=document.getElementById('login-msg');
+      if(!user||!pass){msg.textContent='Please fill all fields.';msg.className='error';return;}
+      msg.textContent='Login successful!';msg.className='success';
+      setTimeout(()=>msg.textContent='',2000);
+    });
+
+    formSignup.addEventListener('submit',e=>{
+      const name=document.getElementById('signup-name').value.trim();
+      const email=document.getElementById('signup-email').value.trim();
+      const p1=document.getElementById('signup-pass').value;
+      const p2=document.getElementById('signup-pass2').value;
+      const msg=document.getElementById('signup-msg');
+      const err=document.getElementById('pass-error');
+      if(!name||!email||!p1||!p2){msg.textContent='Please fill all fields.';msg.className='error';return;}
+      if(p1!==p2){err.style.display='block';return;}
+      err.style.display='none';
+      if(p1.length<6){msg.textContent='Password must be at least 6 characters.';msg.className='error';return;}
+      msg.textContent='Account created successfully!';msg.className='success';
+      setTimeout(()=>{showLogin();msg.textContent='';},1500);
+    });
+
+    const p1=document.getElementById('signup-pass');
+    const p2=document.getElementById('signup-pass2');
+    const err=document.getElementById('pass-error');
+    function checkMatch(){err.style.display=p1.value&&p2.value&&p1.value!==p2.value?'block':'none';}
+    p1.addEventListener('input',checkMatch);
+    p2.addEventListener('input',checkMatch);
+  </script>
+</body>
+</html>

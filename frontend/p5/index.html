@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Reviews</title>
+  <style>
+    /* ===== Base Styles ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .reviews-container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    /* ===== Review Summary ===== */
+    .review-summary {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: #fafafa;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+    }
+
+    .rating-box {
+      text-align: center;
+      flex: 0 0 130px;
+    }
+
+    .rating-score {
+      font-size: 48px;
+      font-weight: 600;
+      color: #000;
+      line-height: 1;
+    }
+
+    .rating-count {
+      font-size: 13px;
+      color: #777;
+      margin: 4px 0;
+    }
+
+    .stars {
+      color: #f5a623;
+      font-size: 18px;
+    }
+
+    .rating-bars {
+      flex: 1;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .rating-row span {
+      width: 120px;
+      color: #555;
+    }
+
+    .bar {
+      flex: 1;
+      height: 6px;
+      background: #e6e6e6;
+      border-radius: 3px;
+      position: relative;
+      margin-right: 10px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      background: #f5a623;
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .bar-count {
+      width: 30px;
+      text-align: right;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* ===== Comment Input ===== */
+    .comment-box {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    .comment-box textarea {
+      width: 100%;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 14px;
+      resize: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .comment-box textarea:focus {
+      border-color: #000;
+    }
+
+    /* ===== Individual Reviews ===== */
+    .review-card {
+      display: flex;
+      flex-direction: column;
+      background: #fafafa;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .review-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-user img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .review-user-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .review-stars {
+      color: #f5a623;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+
+    .review-date {
+      font-size: 13px;
+      color: #888;
+    }
+
+    .review-text {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .review-images {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .review-images img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* ===== View More Button ===== */
+    .view-more {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .view-more button {
+      border: 1px solid #ccc;
+      background: transparent;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .view-more button:hover {
+      background: #f2f2f2;
+    }
+
+
+    @media (max-width: 600px) {
+      .review-summary {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .rating-row span {
+        width: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reviews-container">
+    <h2>Reviews</h2>
+
+    <!-- Review Summary -->
+    <div class="review-summary">
+      <div class="rating-box">
+        <div class="rating-score">4.8</div>
+        <div class="rating-count">of 125 reviews</div>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="rating-bars">
+        <div class="rating-row">
+          <span>Excellent</span>
+          <div class="bar"><div class="bar-fill" style="width: 95%;"></div></div>
+          <div class="bar-count">100</div>
+        </div>
+        <div class="rating-row">
+          <span>Good</span>
+          <div class="bar"><div class="bar-fill" style="width: 60%;"></div></div>
+          <div class="bar-count">11</div>
+        </div>
+        <div class="rating-row">
+          <span>Average</span>
+          <div class="bar"><div class="bar-fill" style="width: 30%;"></div></div>
+          <div class="bar-count">3</div>
+        </div>
+        <div class="rating-row">
+          <span>Below Average</span>
+          <div class="bar"><div class="bar-fill" style="width: 15%;"></div></div>
+          <div class="bar-count">8</div>
+        </div>
+        <div class="rating-row">
+          <span>Poor</span>
+          <div class="bar"><div class="bar-fill" style="width: 5%;"></div></div>
+          <div class="bar-count">1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comment Box -->
+    <div class="comment-box">
+      <textarea rows="2" placeholder="Leave Comment"></textarea>
+    </div>
+
+    <!-- Review Cards -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-user">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Grace Carey" />
+          <div>
+            <div class="review-user-name">Grace Carey</div>
+            <div class="review-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="review-date">24 January, 2023</div>
+      </div>
+      <div class="review-text">
+        I was a bit nervous to be buying a secondhand phone from Amazon, but I couldn’t be happier with my purchase! 
+        I bought an Unlocked black iPhone 14 Pro Max in excellent condition and everything is PERFECT.
+        It was super easy to set up and the phone works great. Highly recommend!
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-user">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Ronald Richards" />
+          <div>
+            <div class="review-user-name">Ronald Richards</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-date">24 January, 2023</div>
+      </div>
+      <div class="review-text">
+        This phone has 1T storage and is durable. Plus all the new iPhones have a C port! Apple is phasing out
+        the current ones, so if you want a phone that’s going to last, grab an iPhone 14 Pro Max!
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-user">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Darcy King" />
+          <div>
+            <div class="review-user-name">Darcy King</div>
+            <div class="review-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="review-date">24 January, 2023</div>
+      </div>
+      <div class="review-text">
+        I might be the only one to say this but the camera is a little funky. Hoping it will change with a software update; otherwise, love this phone! Came in great condition.
+
+    </div>
+      <div class="review-images">
+        <img src="re/a8c0f4aaadb599ba6a4749341ac328403b1936fe.png" alt="review image 1" />
+        <img src="re/3b51b3fac01a01c6ab615a77ae23d662761d0c98.png" alt="review image 2" />
+      </div>
+    </div>
+
+    <!-- View More -->
+    <div class="view-more">
+      <button>View More ▼</button>
+    </div>
+  </div>
+</body>
+</html>

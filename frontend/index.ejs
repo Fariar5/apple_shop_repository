@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
@@ -7,48 +8,60 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
   <header class="header">
     <div class="logo">
-        <img src="images/Logo.png" />
+      <img src="images/Logo.png" />
     </div>
 
 
     <div class="search">
-        <div class="search-box">
+      <div class="search-box">
         <button><img src="images/Search.png" /></button>
         <input type="text" placeholder="Search">
-        
-        </div>
+
+      </div>
     </div>
-   
+
     <div class="list">
       <ul class="list-links">
-        <li><a>Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a>About</a></li>
         <li><a>Contact us</a></li>
         <li><a>blog</a></li>
       </ul>
-    </div>    
+    </div>
     <div class="icons">
-        <a >        
-            <img class="one" src="images/1.png" />
+      <% if (user){%>
+        <a href="">
+          <img class="one" src="images/1.png" />
         </a>
-        <a >        
-            <img class="two" src="images/Cart1.png" />
+        <a href="/shoppingCard">
+          <img class="two" src="images/Cart1.png" />
         </a>
-        <a>        
+        <a href="/profile">
+          <img class="three" src="images/Vector.png" />
+        </a>
+        <%}else{%>
+          <a href="/login_signup">
             <img class="three" src="images/Vector.png" />
-        </a>
+          </a>
+          <%}%>
     </div>
 
   </header>
@@ -59,39 +72,45 @@
           <p class="text1">Pro.Beyond.</p>
           <h1 class="text2">iPhone 17 <strong>Pro Max</strong></h1>
           <p class="text3">Created to change everything for the better. For everyone.</p>
-          <a class="btn">Shop Now</a>
+          <a class="btn" href="/product/1">Shop Now</a>
         </div>
       </div>
-      <div class="image"><img  src="images/iphone-card-40-government-202509 (1).png" /></div>
+      <div class="image"><img src="images/iphone-card-40-government-202509 (1).png" /></div>
     </div>
   </section>
   <section class="section2">
     <div class="mac">
-      <div class="mac-text"> 
-        <h1>Macbook</br> <strong>Air</strong></h1> <p>The new 15‑inch MacBook Air makes</br> room for more of what you love with</br> a spacious Liquid Retina display.</p>
-      </br><a class="macbtn">Shop Now</a>
+      <div class="mac-text">
+        <h1>Macbook</br> <strong>Air</strong></h1>
+        <p>The new 15‑inch MacBook Air makes</br> room for more of what you love with</br> a spacious Liquid Retina
+          display.</p>
+        </br><a class="macbtn" href="/product/10">Shop Now</a>
       </div>
       <img class="" src="images/mba15-m4-skyblue-gallery1-202503.png" />
     </div>
     <div class="ps">
-      <div class="ps-text"> 
-        <h1>Playstation<strong> 5</strong></br></h1> <p>Incredibly powerful CPUs, GPUs, and an</br> SSD with integrated I/O will redefine</br> your PlayStation experience.</p>
-      </br><a class="psbtn">Shop Now</a>
-      </div>      
+      <div class="ps-text">
+        <h1>Playstation<strong> 5</strong></br></h1>
+        <p>Incredibly powerful CPUs, GPUs, and an</br> SSD with integrated I/O will redefine</br> your PlayStation
+          experience.</p>
+        </br><a class="psbtn" href="/product/6">Shop Now</a>
+      </div>
       <img class="" src="images/PlayStation.png" />
     </div>
-    <div class="air"> 
-      <div class="air-text"> 
-        <h1>Apple</br>AirPods<strong> Max</strong></h1><p>Computational audio. Listen,</br> it's powerful</p>
-      </br><a class="airbtn">Shop Now</a>
-      </div>     
+    <div class="air">
+      <div class="air-text">
+        <h1>Apple</br>AirPods<strong> Max</strong></h1>
+        <p>Computational audio. Listen,</br> it's powerful</p>
+        </br><a class="airbtn" href="/product/8">Shop Now</a>
+      </div>
       <img class="" src="images/bento_1_airpod_max_midnight__4jy1tkqh9qay_large.png" />
     </div>
     <div class="vis">
-      <div class="vis-text"> 
-        <h1>Apple</br>Vision<strong> Pro</strong></h1><p>A revolutionary device for </br>immersive spatial experiences.</p>
-        </br><a class="visbtn">Shop Now</a>
-      </div>     
+      <div class="vis-text">
+        <h1>Apple</br>Vision<strong> Pro</strong></h1>
+        <p>A revolutionary device for </br>immersive spatial experiences.</p>
+        </br><a class="visbtn" href="/product/5">Shop Now</a>
+      </div>
       <img class="" src="images/image 36.png" />
     </div>
   </section>
@@ -99,13 +118,15 @@
   <!-- Search With Browsing  -->
   <section class="section3">
     <div class="category-section">
-      <h2>Browse By Category </h2>      
+      <h2>Browse By Category </h2>
       <div class="category">
         <div class="categories">
           <a class="category-card" href="/category/1"><img src="images/Phones.png" alt=""><span>Phones</span></a>
-          <a class="category-card" href="/category/2"><img src="images/Smart Watches.png" alt=""><span>Smart Watches</span></a>
+          <a class="category-card" href="/category/2"><img src="images/Smart Watches.png" alt=""><span>Smart
+              Watches</span></a>
           <a class="category-card" href="/category/3"><img src="images/Cameras.png" alt=""><span>Cameras</span></a>
-          <a class="category-card" href="/category/4"><img src="images/Headphones.png" alt=""><span>Headphones</span></a>
+          <a class="category-card" href="/category/4"><img src="images/Headphones.png"
+              alt=""><span>Headphones</span></a>
           <a class="category-card" href="/category/5"><img src="images/Computers.png" alt=""><span>Computers</span></a>
           <a class="category-card" href="/category/6"><img src="images/Gaming.png" alt=""><span>Gaming</span></a>
         </div>
@@ -118,105 +139,35 @@
       <div class="color-in1">
         <h1>PRO</h1>
       </div>
-      <div class="color-in3"><h1>iPhon 17</h1></div>
+      <div class="color-in3">
+        <h1>iPhon 17</h1>
+      </div>
       <div class="color-in2"><img src="images/highlights_design_endframe__flnga0hibmeu_large (1).png" alt=""></div>
     </div>
   </section>
   <section class="section4">
     <div class="product-section">
-      <h2></h2>      
+      <h2></h2>
       <div class="product">
         <div class="products">
 
-          <% content.forEach(product =>{ %>
-            <div class="product-card<%=product.id%>">            
+          <% content.forEach(product=>{ %>
+            <div class="product-card<%=product.id%>">
               <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
               <div class="card42"><img src="Recources/image/<%= product.id %>_<%= product.name %>/1.png" alt=""></div>
-              <div class="card43"><p><%= product.name %></br></br></p> </div>
-              <div class="card44"><strong>$<%= product.price %></strong></div>
-              <div class="card45"><a class="btnp" href="/product/<%= product.id %>">Shop Now</a></div>            
+              <div class="card43">
+                <p>
+                  <%= product.name %></br></br>
+                </p>
+              </div>
+              <div class="card44"><strong>$<%=product.price%></strong></div>
+              <div class="card45"><a class="btnp" href="/product/<%= product.id %>">Shop Now</a></div>
             </div>
-          <% }) %>
-          <!-- <div class="product-card2">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1.png" alt=""></div>
-            <div class="card43"><p>Blackmagic Pocket</br>Cinema Camera 6k</br></p> </div>
-            <div class="card44"><strong>$2535</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card3">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (1).png" alt=""></div>
-            <div class="card43"><p>Apple Watch Series 9 GPS </br>41mm Starlight Aluminium </br></p> </div>
-            <div class="card44"><strong>$399</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card4">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/pi10.png" alt=""></div>
-            <div class="card43"><p>AirPods Max Blue </br>Starlight Aluminium  </br></p> </div>
-            <div class="card44"><strong>$549</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card5">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (6).png" alt=""></div>
-            <div class="card43"><p>Samsung Galaxy Watch6 </br>Classic 47mm Black</br></p> </div>
-            <div class="card44"><strong>$369</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card6">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (5).png" alt=""></div>
-            <div class="card43"><p>Galaxy Z Fold5 Unlocked | </br>256GB | Phantom Black</br></p> </div>
-            <div class="card44"><strong>$1799</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card7">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (4).png" alt=""></div>
-            <div class="card43"><p>Galaxy Buds FE </br>Graphite</br></p></div>
-            <div class="card44"><strong>$99.99</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card8">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (3).png" alt=""></div>
-            <div class="card43"><p>Apple iPad 9 10.2" 64GB Wi-Fi</br> Silver (MK2L3) 2021</br></p> </div>
-            <div class="card44"><strong>$398</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card9">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/watch-card-40-compare-202509_GEO_US.png" alt=""></div>
-            <div class="card43"><p>Apple iPad 9 10.2" 64GB Wi-Fi</br> Silver (MK2L3) 2021</br></p> </div>
-            <div class="card44"><strong>$398</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div> 
-          <div class="product-card10">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Macbook 1.png" alt=""></div>
-            <div class="card43"><p>Apple iPad 9 10.2" 64GB Wi-Fi</br> Silver (MK2L3) 2021</br></p> </div>
-            <div class="card44"><strong>$398</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card11">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/dv_web_D1800010021192932.png" alt=""></div>
-            <div class="card43"><p>Apple iPad 9 10.2" 64GB Wi-Fi</br> Silver (MK2L3) 2021</br></p> </div>
-            <div class="card44"><strong>$398</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div> 
-          <div class="product-card12">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/image 41.png" alt=""></div>
-            <div class="card43"><p>Apple iPad 9 10.2" 64GB Wi-Fi</br> Silver (MK2L3) 2021</br></p> </div>
-            <div class="card44"><strong>$398</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>                                       -->
+            <% }) %>
+
         </div>
       </div>
-    </div>    
+    </div>
   </section>
   <section class="section55">
     <div class="section55in">
@@ -224,58 +175,44 @@
         <h1>iMac</h1>
       </div>
       <div class="section55img"><img src="images\imac-touch-id-blue-gallery-1-202410.png" alt=""></div>
-      <div class="btnimac"><a class="imacbtn">buy Now</a></div>
-    </div>    
+      <div class="btnimac"><a class="imacbtn" href="/product/1">buy Now</a></div>
+    </div>
   </section>
   <section class="section6">
-      <div class="product">
-        <div class="productt">
-          <div class="product-card1">            
+    <div class="product">
+      <div class="productt">
+        <% randomContent.forEach(product=>{ %>
+          <div class="product-card<%=product.id%>">
             <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/iphone-compare-iphone-17-pro-202509.png" alt=""></div>
-            <div class="card43"><p>Apple iPhone 14 Pro 1TB Gold </br>(MQ2V3)</br></p> </div>
-            <div class="card44"><strong>$1499</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>            
+            <div class="card42"><img src="Recources/image/<%= product.id %>_<%= product.name %>/1.png" alt=""></div>
+            <div class="card43">
+              <p>
+                <%= product.name %></br></br>
+              </p>
+            </div>
+            <div class="card44"><strong>$<%= product.price %></strong></div>
+            <div class="card45"><a class="btnp" href="/product/<%= product.id %>">Shop Now</a></div>
           </div>
-          <div class="product-card2">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/pi11.png" alt=""></div>
-            <div class="card43"><p>Blackmagic Pocket</br>Cinema Camera 6k</br></p> </div>
-            <div class="card44"><strong>$2535</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card3">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/Iphone 14 pro 1 (1).png" alt=""></div>
-            <div class="card43"><p>Apple Watch Series 9 GPS </br>41mm Starlight Aluminium </br></p> </div>
-            <div class="card44"><strong>$399</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-          <div class="product-card4">
-            <div class="card41"><img src="images/Favorite_duotone.png" alt=""></div>
-            <div class="card42"><img src="images/iphone-compare-iphone-air-202509.png" alt=""></div>
-            <div class="card43"><p>AirPods Max Blue </br>Starlight Aluminium  </br></p> </div>
-            <div class="card44"><strong>$549</strong></div>
-            <div class="card45"><a class="btnp">Shop Now</a></div>
-          </div>
-        </div>
-      </div>  
+          <% }) %>
+
+      </div>
   </section>
   <section class="section7">
     <div class="section7-in">
-      <img src="images/Banner 2.png" alt="">      
+      <img src="images/Banner 2.png" alt="">
     </div>
   </section>
   <footer>
     <div class="footers">
-       <div class="footer-col footer-brand">
+      <div class="footer-col footer-brand">
         <h2>cyber</h2>
-        <p>We are a residential interior design</br> studio in Portland, creating more than</br> spaces we craft experiences</p>
+        <p>We are a residential interior design</br> studio in Portland, creating more than</br> spaces we craft
+          experiences</p>
         <div class="fimg">
-          <a><img src="images/Twitter.png" alt=""></a>
-          <a><img src="images/Vector12.png" alt=""></a>
-          <a><img src="images/Vector10.png" alt=""></a>
-          <a><img src="images/Instagram.png" alt=""></a>
+          <a href="https://t.me/ace_ven3"><img src="images/Twitter.png" alt=""></a>
+          <a href=""><img src="images/Vector12.png" alt=""></a>
+          <a href=""><img src="images/Vector10.png" alt=""></a>
+          <a href=""><img src="images/Instagram.png" alt=""></a>
         </div>
       </div>
       <div class="footer-col">
@@ -288,7 +225,7 @@
           <li><a>Non-cash account</a></li>
           <li><a>Payment</a></li>
         </ul>
-      </div>                         
+      </div>
       <div class="footer-col">
         <h3>Assistance to the buyer</h3>
         <ul>
@@ -299,7 +236,7 @@
           <li><a>FAQ</a></li>
           <li><a>Terms of use</a></li>
         </ul>
-     </div>
+      </div>
     </div>
     <div class="copyright">
       © 2025 Cyber Studio. All rights reserved.
@@ -308,4 +245,4 @@
 
 </body>
 
-</html>  
+</html>
